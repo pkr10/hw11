@@ -58,10 +58,8 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-       init();
-
+        init();
         listup();
-
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -103,9 +101,6 @@ public class Main2Activity extends AppCompatActivity {
 
                     e1.setText(readStr.substring(0, readStr.length()-1));
                     filename = path + "mydiary/" + data.get(position).toString();
-
-
-
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -117,12 +112,7 @@ public class Main2Activity extends AppCompatActivity {
 
                 d1.updateDate(Integer.parseInt(year),Integer.parseInt(month)-1,Integer.parseInt(date));
                 b1.setText("수정");
-                ;
-
-
                 listup();
-
-
             }
 
         });
@@ -193,10 +183,7 @@ public class Main2Activity extends AppCompatActivity {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-
                         }
-
-
                     }
                 });
 //
@@ -225,7 +212,6 @@ public class Main2Activity extends AppCompatActivity {
                     else{
                         listup();
                     }
-
                 }
                 else{
                     AlertDialog.Builder dlg = new AlertDialog.Builder(Main2Activity.this);
@@ -255,7 +241,6 @@ public class Main2Activity extends AppCompatActivity {
                                 listup();
                             }
                             else{
-
                                 listup();
                             }
                         }
@@ -290,11 +275,7 @@ public class Main2Activity extends AppCompatActivity {
                             }
                         }
                     }).show();
-
-
-
                 }
-
                 break;
 
             case R.id.btncancel:
@@ -332,7 +313,6 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), sdPath, Toast.LENGTH_SHORT).show();
         return sdPath;
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         String str = null;
@@ -362,7 +342,6 @@ public class Main2Activity extends AppCompatActivity {
         }
         Collections.sort(data,comparator);
         t1.setText("등록된 메모 개수: "+data.size());
-
     }
     void init(){
         t1 = (TextView)findViewById(R.id.tvCount);
